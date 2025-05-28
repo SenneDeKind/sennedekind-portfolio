@@ -83,7 +83,7 @@ body {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: 2px;
   width: 0%;
   height: 3px;
   background: var(--light-teal);
