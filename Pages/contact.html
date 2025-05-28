@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Senne De Kind</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Senne De Kind</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-section fade-in">
+    <h2>Contacteer mij</h2>
+    <p>Heb je een project, vraag of gewoon zin om hallo te zeggen? Stuur me een bericht!</p>
+
+    <form class="contact-form" id="contact-form" novalidate>
+      <input type="text" name="name" id="name" placeholder="Naam" required />
+      <input type="email" name="email" id="email" placeholder="E-mail" required />
+      <textarea name="message" id="message" rows="6" placeholder="Bericht" required></textarea>
+      <button type="submit" class="btn">Verstuur</button>
+      <p class="form-feedback" aria-live="polite"></p>
+    </form>
+
+    <section class="contact-info">
+      <h3>Contactgegevens</h3>
+      <p><strong>Telefoon:</strong> +32 468 48 59 11</p>
+      <p><strong>Email:</strong> dekindsenne@gmail.com</p>
+      <p><strong>Locatie:</strong> Antwerpen, België</p>
+    </section>
+
+    <section class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79975.17640409608!2d4.372911586121234!3d51.21494426124909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f71ec7663655%3A0x8b8791733a4f9f17!2s2610%20Antwerpen!5e0!3m2!1snl!2sbe!4v1748390051005!5m2!1snl!2sbe" 
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Senne De Kind. Alle rechten voorbehouden.</p>
+      <div class="socials">
+       <a href="https://www.tiktok.com/@sennedekind?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"> 
+          <img src="../Images/tiktok-svgrepo-com.svg" alt="TikTok" /></a>
+
+        <a href="https://www.instagram.com/sennedekind/" target="_blank" rel="noopener noreferrer">
+          <img src="../Images/instagram-svgrepo-com.svg" alt="Instagram" /></a>
+
+        <a href="https://www.linkedin.com/in/senne-de-kind-91367735a/" target="_blank" rel="noopener noreferrer">
+          <img src="../Images/linkedin-svgrepo-com.svg" alt="LinkedIn" /></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

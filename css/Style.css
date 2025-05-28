@@ -1,0 +1,649 @@
+/* KLEURENPALET */
+:root {
+  --white: #ffffff;
+  --light-teal: #12E6E2;
+  --teal: #0FC2C0;
+  --medium-teal: #0CABA8;
+  --dark-teal: #008F8C;
+  --darker-teal: #015958;
+  --deep-teal: #023535;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 100% van het scherm */
+  background: linear-gradient(135deg, var(--deep-teal), var(--medium-teal));
+}
+
+main {
+  flex: 1; /* neemt alle beschikbare ruimte in tussen header en footer */
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--white);
+  color: var(--deep-teal);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(1, 89, 88, 0.85); /* semi-transparant donker teal */
+  backdrop-filter: saturate(180%) blur(12px); /* glass effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 15px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+  background-color: rgba(1, 89, 88, 0.95);
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--light-teal);
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 8px var(--light-teal);
+  user-select: none;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: var(--light-teal);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--light-teal);
+  font-weight: 700;
+  text-shadow: 0 0 6px var(--light-teal);
+  cursor: pointer;
+}
+
+/* Kleine aanpassing mobile nav */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+
+.home-section, .about-section, .portfolio-section, .contact-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.home-content .avatar-container {
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid var(--teal);
+  object-fit: cover;
+}
+
+h1, h2 {
+  color: white;
+}
+
+p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #ffffff;
+}
+
+.btn {
+  background-color: var(--teal);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--medium-teal);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.portfolio-item img,
+.portfolio-item video {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 2px solid var(--teal);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+footer {
+  background-color: var(--darker-teal);
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.socials a img {
+  width: 24px;
+  margin: 0 0.5rem;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.socials a img:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1.5s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+  }
+}
+
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.skill-item {
+  background: rgba(15, 194, 192, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  width: 120px;
+  box-shadow: 0 0 10px var(--light-teal);
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.skill-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--teal);
+}
+
+.skill-item img {
+  width: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-slider {
+  max-width: 600px;
+  margin: 1rem auto 3rem;
+  font-style: italic;
+  color: var(--white);
+}
+
+.testimonial-slider blockquote {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.testimonial-slider cite {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--light-teal);
+}
+
+.btn.pulse {
+  animation: pulseAnimation 2s infinite;
+}
+
+@keyframes pulseAnimation {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--light-teal);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--light-teal);
+  }
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.25),
+    0 0 8px var(--light-teal);
+  background-color: var(--deep-teal);
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.portfolio-item img,
+.portfolio-item video {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Overlay verschijnt op hover - optioneel met project info */
+.portfolio-item::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  color: var(--white);
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.7));
+  font-weight: 600;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  border-radius: 0 0 16px 16px;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.35),
+    0 0 15px var(--light-teal);
+}
+
+.portfolio-item:hover img,
+.portfolio-item:hover video {
+  transform: scale(1.1);
+  filter: brightness(1.05) saturate(1.1);
+}
+
+.portfolio-item:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Video controls styling: fade in on hover */
+.portfolio-item video::-webkit-media-controls {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item video:hover::-webkit-media-controls {
+  opacity: 1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .portfolio-item img,
+  .portfolio-item video {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .portfolio-item img,
+  .portfolio-item video {
+    height: 220px;
+  }
+}
+
+
+.about-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--deep-teal), var(--medium-teal));
+  min-height: 70vh;
+  color: var(--white);
+}
+
+.about-content {
+  max-width: 700px;
+  margin: 2rem auto 0;
+  background: rgba(15, 194, 192, 0.15);
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(12, 171, 168, 0.4);
+  color: var(--white);
+  line-height: 1.7;
+  font-size: 1.125rem;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.about-content:hover {
+  transform: scale(1.03);
+}
+
+.about-section h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px var(--light-teal);
+}
+
+.contact-section {
+  max-width: 700px;
+  margin: 3rem auto 4rem;
+  padding: 0 1rem;
+  color: var(--white);
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.3rem;
+  margin-bottom: 0.6rem;
+  color: var(--light-teal);
+  text-shadow: 0 0 8px var(--light-teal);
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  resize: vertical;
+  background-color: var(--medium-teal);
+  color: var(--white);
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #b2d8d8;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--light-teal);
+  background-color: var(--dark-teal);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+  background-color: var(--light-teal);
+  color: var(--deep-teal);
+  font-weight: 700;
+  padding: 0.7rem 2.2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(18,230,226,0.7);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background-color: var(--white);
+  box-shadow: 0 8px 20px rgba(18,230,226,0.9);
+  color: var(--medium-teal);
+}
+
+/* Contactgegevens */
+.contact-info {
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 3rem;
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--light-teal);
+  text-shadow: 0 0 8px var(--light-teal);
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+}
+
+/* Kaart */
+.map {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-section {
+    max-width: 90vw;
+  }
+
+  .contact-form .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Navbar scrolled effect */
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Scroll-to-top button */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+/* Achtergrond */
+body {
+  background-color: #e0f7f5;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a2a33; /* Donker blauwgrijs voor leesbaarheid */
+}
+
+/* About layout */
+.about-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  padding: 40px 20px;
+  background: transparent;
+}
+
+/* Witte kaart met glow */
+.about-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 0 25px rgba(0, 128, 128, 0.25); /* glow */
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 40px rgba(0, 128, 128, 0.35); /* intens glow bij hover */
+}
+
+.about-card h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #004d4d;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.about-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #1a2a33;
+}
+
+/* Glowing button */
+.about-card .btn {
+  background-color: #008080;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 0 12px rgba(0, 128, 128, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.about-card .btn:hover {
+  background-color: #006666;
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(0, 128, 128, 0.6);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .about-card {
+    padding: 25px 20px;
+  }
+
+  .about-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-card p {
+    font-size: 1rem;
+  }
+}
